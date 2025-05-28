@@ -1,2 +1,2 @@
 # fantastic-enigma
-Federated Finetuning Playground
+Federated LLM Finetuning Playground
