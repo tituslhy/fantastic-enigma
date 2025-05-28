@@ -22,4 +22,5 @@ dependencies = [
     "pandas>=2.2.3",
     "numpy>=2.2.6",
     "torch>=2.7.0",
+    "datasets>=3.1.0",
 ]
