@@ -629,6 +629,7 @@ dependencies = [
     { name = "ipywidgets" },
     { name = "jupyter" },
     { name = "llama-index" },
+    { name = "llama-index-llms-huggingface" },
     { name = "llama-index-llms-ollama" },
     { name = "matplotlib" },
     { name = "numpy" },
@@ -653,6 +654,7 @@ requires-dist = [
     { name = "ipywidgets", specifier = ">=8.1.7" },
     { name = "jupyter", specifier = ">=1.1.1" },
     { name = "llama-index", specifier = ">=0.12.37" },
+    { name = "llama-index-llms-huggingface", specifier = ">=0.5.0" },
     { name = "llama-index-llms-ollama", specifier = ">=0.5.6" },
     { name = "matplotlib", specifier = ">=3.10.3" },
     { name = "numpy", specifier = ">=2.2.6" },
@@ -661,7 +663,7 @@ requires-dist = [
     { name = "peft", specifier = ">=0.15.2" },
     { name = "scikit-learn", specifier = ">=1.6.1" },
     { name = "torch", specifier = ">=2.7.0" },
-    { name = "transformers", specifier = ">=4.52.3" },
+    { name = "transformers", specifier = "==4.51.3" },
     { name = "trl", specifier = ">=0.18.0" },
     { name = "unsloth", specifier = ">=2024.8" },
     { name = "wandb", specifier = ">=0.19.11" },
@@ -1663,6 +1665,20 @@ dependencies = [
 sdist = { url = "https://files.pythonhosted.org/packages/58/42/4f44774ea961847980ed52eb9892b5df5772432832e6c42f90fcc0b799d7/llama_index_indices_managed_llama_cloud-0.7.0.tar.gz", hash = "sha256:28572ca42f3a7fe45d0fd7a152aadf0b30237878a0b3528a79a62c17d7b5f959", size = 13548, upload_time = "2025-05-27T19:58:39.099Z" }
 wheels = [
     { url = "https://files.pythonhosted.org/packages/0e/e3/039cfcafb230a4c9e8eb07921418d408fa38c478a0ae2bcce15224a3ac09/llama_index_indices_managed_llama_cloud-0.7.0-py3-none-any.whl", hash = "sha256:708ac8f86537e639fff0ed9c974f5dad942269510ce196cbd128543e0019eaa8", size = 15147, upload_time = "2025-05-27T19:58:38.16Z" },
+]
+
+[[package]]
+name = "llama-index-llms-huggingface"
+version = "0.5.0"
+source = { registry = "https://pypi.org/simple" }
+dependencies = [
+    { name = "llama-index-core" },
+    { name = "torch" },
+    { name = "transformers", extra = ["torch"] },
+]
+sdist = { url = "https://files.pythonhosted.org/packages/dd/bd/f3d1e4e149956f4fb990199b65d66454175f2c4672d74349653c9fd671ed/llama_index_llms_huggingface-0.5.0.tar.gz", hash = "sha256:72fd209579623c443744495a51a586daf027035e90c788fef0d7e1a1c11e4a2d", size = 6974, upload_time = "2025-04-08T15:47:00.929Z" }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/24/14/d146bca2952cc1bbb561f8238225a1099c7d4db5a884801006bd3bec5a48/llama_index_llms_huggingface-0.5.0-py3-none-any.whl", hash = "sha256:b0df04ec1b614e04ef9762021950f35afce363af48b84118991862250e3f210f", size = 7788, upload_time = "2025-04-08T15:47:00.056Z" },
 ]
 
 [[package]]
@@ -3614,7 +3630,7 @@ wheels = [
 
 [[package]]
 name = "transformers"
-version = "4.52.3"
+version = "4.51.3"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
     { name = "filelock" },
@@ -3628,9 +3644,15 @@ dependencies = [
     { name = "tokenizers" },
     { name = "tqdm" },
 ]
-sdist = { url = "https://files.pythonhosted.org/packages/07/42/271bcf364788337ac24e7f200005ac7142aaf022206bd6119d2daca22c04/transformers-4.52.3.tar.gz", hash = "sha256:2e1de29374f27920aaf6d589d4e6339f33def2fb08809e1a1d792e040e9fbce7", size = 8951324, upload_time = "2025-05-22T14:40:52.888Z" }
+sdist = { url = "https://files.pythonhosted.org/packages/f1/11/7414d5bc07690002ce4d7553602107bf969af85144bbd02830f9fb471236/transformers-4.51.3.tar.gz", hash = "sha256:e292fcab3990c6defe6328f0f7d2004283ca81a7a07b2de9a46d67fd81ea1409", size = 8941266, upload_time = "2025-04-14T08:15:00.485Z" }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/36/f8/1f086942bc6a044e4e68dacf6de761a45367795efd5f57ad356765691c79/transformers-4.52.3-py3-none-any.whl", hash = "sha256:cd04059da50e7cf2a617ce3143ba8beffbf119f8c25a0717c3454fd9d0f19609", size = 10460322, upload_time = "2025-05-22T14:40:49.583Z" },
+    { url = "https://files.pythonhosted.org/packages/a9/b6/5257d04ae327b44db31f15cce39e6020cc986333c715660b1315a9724d82/transformers-4.51.3-py3-none-any.whl", hash = "sha256:fd3279633ceb2b777013234bbf0b4f5c2d23c4626b05497691f00cfda55e8a83", size = 10383940, upload_time = "2025-04-14T08:13:43.023Z" },
+]
+
+[package.optional-dependencies]
+torch = [
+    { name = "accelerate" },
+    { name = "torch" },
 ]
 
 [[package]]

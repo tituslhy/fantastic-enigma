@@ -5,7 +5,7 @@ dataset:
   name: "medalpaca/medical_meadow_medical_flashcards"
 
 model:
-  name: "meta-llama/Llama-3.2-1B-Instruct"
+  name: "EleutherAI/pythia-70m"
   quantization: 4 # 8 or 4 if you want to do quantization with BitsAndBytes
   gradient_checkpointing: True
   use_fast_tokenizer: True
@@ -25,14 +25,12 @@ train:
   training_arguments:
     output_dir: null # to be set by hydra
     learning_rate: null # to be set by the client
-    disable_tqdm: true
     per_device_train_batch_size: 2 # increase it based on your device's RAM/VRAM size
     gradient_accumulation_steps: 1
     logging_steps: 5
-    num_train_epochs: 3
-    max_steps: 1
+    num_train_epochs: 1 #or set max steps if not full epoch
     report_to: "wandb"
-    run_name: "llama32_1b_fedSFT_take1"
+    run_name: "pythia_70m_fedSFT_take3"
     save_steps: 1000
     save_total_limit: 10
     gradient_checkpointing: ${model.gradient_checkpointing}
@@ -40,7 +38,7 @@ train:
 
 flower:
     num_clients: 20 # total number of clients
-    num_rounds: 250
+    num_rounds: 2
     fraction_fit: 0.2
     client_resources:
       num_cpus: 4
