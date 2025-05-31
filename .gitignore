@@ -1,5 +1,6 @@
 notebooks/my_fl_model/
 notebooks/wandb/
+.DS_Store
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
