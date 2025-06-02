@@ -12,7 +12,7 @@ In our notebooks folder, we demonstrate federated supervised finetuning of an LL
 ```
 .
 |- notebooks
-    |- llama32_1b_fed_finetuning.ipynb     <- The main notebook discussed in the companion medium article
+    |- llama32_1b_fed_finetuning.ipynb     <- Federated finetuning of a Llama 3.2 1B LLM. This is the main notebook discussed in the companion medium article
     |- pythia_70m_fed_finetuning.ipynb     <- Federated finetuning experiment on Pythia 70m LLM.  
 ```
 
